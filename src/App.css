@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar{
+  background-color: #282c34;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar a{
+  color: white;
+  text-decoration: none;
+}
+
+
+.navbar .active{
+  color: wheat;
+}

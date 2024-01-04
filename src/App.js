@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import {Routes, Route} from "react-router-dom";
+import Home from "./Pages/Home";
+import Blog from "./Pages/Blog";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Navigation from "./Pages/Navigation";
+import "./App.css";
+
 
 function App() {
+  const[count, setCount]= useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navigation/>
+      <Routes>
+        <Route path="/home" element={<Home/>}/>
+        <Route path="/about" element={<About setCount={setCount} count={count}/>}/>
+        <Route path="/blog" element={<Blog count={count}/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+      </Routes>
     </div>
-  );
+  )
 }
 
 export default App;
